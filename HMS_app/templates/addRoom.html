@@ -1,0 +1,88 @@
+{%  extends 'master.html'%}
+{% block 'content' %}
+  
+
+<div class="content-wrapper">
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Create room</h4>
+                    <p class="card-description">Add a new room </p>
+                    <form class="forms-sample">
+                      <div class="form-group">
+                        <label for="room-id">Room id</label>
+                        <input type="text" class="form-control" id="roomid"  placeholder="Room-id">
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="location" class="form-control" id="exampleInputEmail1">
+                      </div>
+                      <div class="form-group">
+                        <label for="room-description">Room description</label>
+                        <input type="Room description" class="form-control" >
+                      </div>
+                      <div class="form-group">
+                        <label for="room-category">Room Category</label>
+                        <select  class="form-control" id="room-category" name="room_category"  >
+                          <option value="Standard">Standard</option>
+                          <option value="Regular">Regular</option>
+                          <option value="Executive">Executive</option>
+                        </select>
+                      </div>
+                       <div class="form-group">
+                        <label for="room-category">Room floor</label>
+                        <select  class="form-control" id="room-floor" name="room_floor"  >
+                          <option value="1st floor">1st floor</option>
+                          <option value="2nd floor">2nd floor</option>
+                          <option value="3rd floor">3rd floor</option>
+                          <option value="4th floor">4th floor</option>
+                        </select>
+                      <div class="form-group">
+                        <label for="room-category">Room status</label>
+                        <select  class="form-control" id="room-status" name="room_staus"  >
+                          <option value="Availabe">Availabe</option>
+                          <option value="Occupied">Occupied</option>
+                          <option value="Reserved">Reserved</option>
+                          <option value="Under-Maintenance">Under-Maintenance</option>
+                        </select>
+                        <div class="form-group">
+                        <label for="Room-capacity">Room capacity</label>
+                        <input type="Room-capacity" class="form-control" >
+                      </div>
+                      <div class="form-group">
+                        <label for="date">Date added</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                      </div>
+                        <div class="form-group">
+                        <label for="room-price">Amount</label>
+                        <input type="Room-price" class="form-control" >
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label text-muted">
+                          <input type="checkbox" class="form-check-input" required>
+                          <a href="#">Remember me</a>
+                          <i class="input-helper"></i></label>
+                      </div>
+                      <button type="submit" class="btn btn-primary me-2" onclick="validate()">Submit</button>
+                      <button class="btn btn-light">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+
+        <script>
+          function validate(){
+           const room = document.getElementById('roomid').value;
+           if (room === ''){
+            alert('Field empty')
+            return false
+           }
+          }
+        </script>
+  <!-- content-wrapper ends -->
+{% endblock 'content'%}
