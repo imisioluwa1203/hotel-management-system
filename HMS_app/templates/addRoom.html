@@ -42,11 +42,20 @@
                       <div class="form-group">
                         <label for="room-category">Room status</label>
                         <select  class="form-control" id="room-status" name="room_staus"  >
-                          <option value="Availabe">Availabe</option>
+                          <!-- <option value="Availabe">Availabe</option>
                           <option value="Occupied">Occupied</option>
                           <option value="Reserved">Reserved</option>
                           <option value="Under-Maintenance">Under-Maintenance</option>
-                        </select>
+                          
+                        </select> -->
+                        <tbody>
+                           {% for status in statuses %}
+                          <tr>                          
+                            <td class="py-1">
+                              <label> {{ status.id}}</label>
+                            </td>
+                            <td> {{ status.status }} </td>
+
                         <div class="form-group">
                         <label for="Room-capacity">Room capacity</label>
                         <input type="Room-capacity" class="form-control" >

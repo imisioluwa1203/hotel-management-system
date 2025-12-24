@@ -60,3 +60,9 @@ class Batch_details(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
 
+class RoomStatus(models.Model):
+    status = models.CharField(max_length=50)
+
+class RoomCategory(models.Model):
+    Category = models.CharField(max_length=50)
+    # Description = models.CharField(max_length=50)

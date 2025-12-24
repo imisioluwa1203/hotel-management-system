@@ -13,16 +13,16 @@
                   {% endif %}
 
                   <div class="card-body">
-                    <h4 class="card-title"> Room Status</h4>
+                    <h4 class="card-title"> Room Category</h4>
                     <p class="card-description">  </p>
-                      <form class="forms-sample" method="POST" enctype="multipart/form-data" action="{% url 'roomstatus' %}">
+                      <form class="forms-sample" method="POST" enctype="multipart/form-data" action="{% url 'roomCategory' %}">
                       {% csrf_token %}
                      
                    
                     <div class="table-responsive">
                       <div>
-                        <label for="exampleInputConfirmPassword1">Room Status</label>
-                        <input type="text" class="form-control" name="roomstatus" id="exampleInputConfirmPassword1" placeholder="Room Status">
+                        <label for="exampleInputConfirmPassword1">Room Category</label>
+                        <input type="text" class="form-control" name="roomcategory" id="exampleInputConfirmPassword1" placeholder="Room category">
                       </div>
                       <div>
                         <button type="submit" class="btn btn-primary me-2">Submit</button>
@@ -40,7 +40,7 @@
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Room Status</h4>
+                    <h4 class="card-title">Room Category</h4>
                     <p class="card-description"> 
                     </p>
                     <div class="table-responsive">
@@ -48,23 +48,25 @@
                         <thead>
                           <tr>
                             <th> Room iD </th>
-                            <th> Room status </th>  
+                            <th> Room Category </th>
+                            <!-- <th>Room description</th>   -->
                           </tr>
                         </thead>
                         
                         <tbody>
-                           {% for status in statuses %}
+                           {% for Category in Categories %}
                           <tr>                          
                             <td class="py-1">
-                              <label> {{ status.id}}</label>
+                              <label> {{ Category.id}}</label>
                             </td>
-                            <td> {{ status.status }} </td>
+                            <td> {{ Category.Category }} </td>
 
                             <td>
                               <td>
-                                <a href="{% url 'update_room_status' status.id %}" class="btn btn-primary">Edit</a>
-                                <a href="{% url 'delete_room_status' status.id %}" class="btn btn-danger" 
-                                onclick="return confirm('Are you sure want to delete this status?');">Delete</a>
+                              
+                                <a href="{% url 'update_room_category' Category.id %}" class="btn btn-primary">Edit</a>
+                                 <a href="{% url 'delete_room_category' Category.id %}" class="btn btn-danger">Delete</a>
+
                               </td>
                             </td>
                             </tr>
